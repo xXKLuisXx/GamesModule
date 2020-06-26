@@ -17,6 +17,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/juegoPrueba', function(){
+    return view('juegoPrueba.index');
+});
+
+Route::get('/slotMachine', function(){
+    return view('slotMachine.index');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
