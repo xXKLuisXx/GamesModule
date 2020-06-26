@@ -25,6 +25,10 @@ Route::get('/slotMachine', function(){
     return view('slotMachine.index');
 });
 
+Route::get('/blackJack', function(){
+    return view('BlackJack.index');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -7,10 +7,10 @@
         <link rel="stylesheet" href="{{ asset('css/cssSlotMachine/orientation_utils.css')}}" type="text/css">
         <link rel="stylesheet" href="{{ asset('css/cssSlotMachine/ios_fullscreen.css')}}" type="text/css">
         <link rel='shortcut icon' type='image/x-icon' href='./favicon.ico' />
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, minimal-ui" />
-	<meta name="msapplication-tap-highlight" content="no"/>
+        <meta name="msapplication-tap-highlight" content="no"/>
 
         <script type="text/javascript" src="{{ asset('js/jsSlotMachine/jquery-3.2.1.min.js')}}"></script>
         <script type="text/javascript" src="{{ asset('js/jsSlotMachine/createjs-2015.11.26.min.js')}}"></script>

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    @extends('layouts.header')
+    @yield('header', View::make('layouts.header'))
     <title>{{ config('app.name', 'Laravel') }}</title>
 </head>
 <body>
-    @extends('layouts.navigation')
+    @yield('header', View::make('layouts.navigation'))
     @yield('content')
 </body>
 </html>

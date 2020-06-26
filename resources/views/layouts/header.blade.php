@@ -1,10 +1,11 @@
-@extends('layouts.metas')
+<!-- Metas -->
+@yield('metas', View::make('layouts.metas'))
 
 <!-- Scripts -->
-@extends('layouts.scripts')
+@yield('scripts', View::make('layouts.scripts'))
 
 <!-- Fonts -->
-@extends('layouts.fonts')
+@yield('fonts', View::make('layouts.fonts'))
 
 <!-- Styles -->
-@extends('layouts.styles')
+@yield('styles', View::make('layouts.styles'))
