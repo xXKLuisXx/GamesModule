@@ -2,53 +2,53 @@
 <html>
     <head>
         <title>3D Roulette</title>
-        <link rel="stylesheet" href="css/reset.css" type="text/css">
-        <link rel="stylesheet" href="css/main.css" type="text/css">
-        <link rel="stylesheet" href="css/orientation_utils.css" type="text/css">
-        <link rel="stylesheet" href="css/ios_fullscreen.css" type="text/css">
+        <link rel="stylesheet" href=" {{ asset('storage/Games/Roulette/css/reset.css') }} " type="text/css">
+        <link rel="stylesheet" href=" {{ asset('storage/Games/Roulette/css/main.css') }} " type="text/css">
+        <link rel="stylesheet" href=" {{ asset('storage/Games/Roulette/css/orientation_utils.css') }} " type="text/css">
+        <link rel="stylesheet" href=" {{ asset('storage/Games/Roulette/css/ios_fullscreen.css') }} " type="text/css">
         <link rel='shortcut icon' type='image/x-icon' href='./favicon.ico' />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, minimal-ui" />
-	<meta name="msapplication-tap-highlight" content="no"/>
+        <meta name="msapplication-tap-highlight" content="no"/>
 
-        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-        <script type="text/javascript" src="js/createjs-2015.11.26.min.js"></script>
-        <script type="text/javascript" src="js/howler.min.js"></script>
-        <script type="text/javascript" src="js/screenfull.js"></script>
-        <script type="text/javascript" src="js/platform.js"></script>
-        <script type="text/javascript" src="js/ios_fullscreen.js"></script>
-        <script type="text/javascript" src="js/ctl_utils.js"></script>
-        <script type="text/javascript" src="js/sprite_lib.js"></script>
-        <script type="text/javascript" src="js/settings.js"></script>
-        <script type="text/javascript" src="js/CRouletteSettings.js"></script>
-        <script type="text/javascript" src="js/CFichesController.js"></script>
-        <script type="text/javascript" src="js/CLang.js"></script>
-        <script type="text/javascript" src="js/CPreloader.js"></script>
-        <script type="text/javascript" src="js/CMain.js"></script>
-        <script type="text/javascript" src="js/CTextButton.js"></script>
-        <script type="text/javascript" src="js/CGfxButton.js"></script>
-        <script type="text/javascript" src="js/CFicheBut.js"></script>
-        <script type="text/javascript" src="js/CBetTableButton.js"></script>
-        <script type="text/javascript" src="js/CBetTextButton.js"></script>
-        <script type="text/javascript" src="js/CToggle.js"></script>
-        <script type="text/javascript" src="js/CMenu.js"></script>
-        <script type="text/javascript" src="js/CGame.js"></script>
-        <script type="text/javascript" src="js/CInterface.js"></script>
-        <script type="text/javascript" src="js/CMsgBox.js"></script>
-        <script type="text/javascript" src="js/CTweenController.js"></script>
-        <script type="text/javascript" src="js/CSeat.js"></script>
-        <script type="text/javascript" src="js/CTableController.js"></script>
-        <script type="text/javascript" src="js/CEnlight.js"></script>
-        <script type="text/javascript" src="js/CWheelTopAnim.js"></script>
-        <script type="text/javascript" src="js/CFiche.js"></script>
-        <script type="text/javascript" src="js/CHistoryRow.js"></script>
-        <script type="text/javascript" src="js/CWheelAnim.js"></script>
-        <script type="text/javascript" src="js/CFinalBetPanel.js"></script>
-        <script type="text/javascript" src="js/CNeighborsPanel.js"></script>
-        <script type="text/javascript" src="js/CGameOver.js"></script>
-        <script type="text/javascript" src="js/CCreditsPanel.js"></script>
-        <script type="text/javascript" src="js/CCTLText.js"></script>
+        <script type="text/javascript" src="{{asset('storage/Games/Roulette/js/jquery-3.2.1.min.js') }} "></script>
+        <script type="text/javascript" src="{{asset('storage/Games/Roulette/js/createjs-2015.11.26.min.js') }} "></script>
+        <script type="text/javascript" src="{{asset('storage/Games/Roulette/js/howler.min.js') }} "></script>
+        <script type="text/javascript" src="{{asset('storage/Games/Roulette/js/screenfull.js') }} "></script>
+        <script type="text/javascript" src="{{asset('storage/Games/Roulette/js/platform.js') }} "></script>
+        <script type="text/javascript" src="{{asset('storage/Games/Roulette/js/ios_fullscreen.js') }} "></script>
+        <script type="text/javascript" src="{{asset('storage/Games/Roulette/js/ctl_utils.js') }} "></script>
+        <script type="text/javascript" src="{{asset('storage/Games/Roulette/js/sprite_lib.js') }} "></script>
+        <script type="text/javascript" src="{{asset('storage/Games/Roulette/js/settings.js') }} "></script>
+        <script type="text/javascript" src="{{asset('storage/Games/Roulette/js/CRouletteSettings.js') }} "></script>
+        <script type="text/javascript" src="{{asset('storage/Games/Roulette/js/CFichesController.js') }} "></script>
+        <script type="text/javascript" src="{{asset('storage/Games/Roulette/js/CLang.js') }} "></script>
+        <script type="text/javascript" src="{{asset('storage/Games/Roulette/js/CPreloader.js') }} "></script>
+        <script type="text/javascript" src="{{asset('storage/Games/Roulette/js/CMain.js') }} "></script>
+        <script type="text/javascript" src="{{asset('storage/Games/Roulette/js/CTextButton.js') }} "></script>
+        <script type="text/javascript" src="{{asset('storage/Games/Roulette/js/CGfxButton.js') }} "></script>
+        <script type="text/javascript" src="{{asset('storage/Games/Roulette/js/CFicheBut.js') }} "></script>
+        <script type="text/javascript" src="{{asset('storage/Games/Roulette/js/CBetTableButton.js') }} "></script>
+        <script type="text/javascript" src="{{asset('storage/Games/Roulette/js/CBetTextButton.js') }} "></script>
+        <script type="text/javascript" src="{{asset('storage/Games/Roulette/js/CToggle.js') }} "></script>
+        <script type="text/javascript" src="{{asset('storage/Games/Roulette/js/CMenu.js') }} "></script>
+        <script type="text/javascript" src="{{asset('storage/Games/Roulette/js/CGame.js') }} "></script>
+        <script type="text/javascript" src="{{asset('storage/Games/Roulette/js/CInterface.js') }} "></script>
+        <script type="text/javascript" src="{{asset('storage/Games/Roulette/js/CMsgBox.js') }} "></script>
+        <script type="text/javascript" src="{{asset('storage/Games/Roulette/js/CTweenController.js') }} "></script>
+        <script type="text/javascript" src="{{asset('storage/Games/Roulette/js/CSeat.js') }} "></script>
+        <script type="text/javascript" src="{{asset('storage/Games/Roulette/js/CTableController.js') }} "></script>
+        <script type="text/javascript" src="{{asset('storage/Games/Roulette/js/CEnlight.js') }} "></script>
+        <script type="text/javascript" src="{{asset('storage/Games/Roulette/js/CWheelTopAnim.js') }} "></script>
+        <script type="text/javascript" src="{{asset('storage/Games/Roulette/js/CFiche.js') }} "></script>
+        <script type="text/javascript" src="{{asset('storage/Games/Roulette/js/CHistoryRow.js') }} "></script>
+        <script type="text/javascript" src="{{asset('storage/Games/Roulette/js/CWheelAnim.js') }} "></script>
+        <script type="text/javascript" src="{{asset('storage/Games/Roulette/js/CFinalBetPanel.js') }} "></script>
+        <script type="text/javascript" src="{{asset('storage/Games/Roulette/js/CNeighborsPanel.js') }} "></script>
+        <script type="text/javascript" src="{{asset('storage/Games/Roulette/js/CGameOver.js') }} "></script>
+        <script type="text/javascript" src="{{asset('storage/Games/Roulette/js/CCreditsPanel.js') }} "></script>
+        <script type="text/javascript" src="{{asset('storage/Games/Roulette/js/CCTLText.js') }} "></script>
         
     </head>
     <body ondragstart="return false;" ondrop="return false;" >

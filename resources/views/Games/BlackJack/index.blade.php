@@ -3,49 +3,48 @@
 
 <head>
     <title>BLACKJACK</title>
-    <link rel="stylesheet" href="{{ asset('storage/BlackJack/css/reset.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('storage/BlackJack/css/main.css')}} " type="text/css">
-    <link rel="stylesheet" href="{{ asset('storage/BlackJack/css/orientation_utils.css')}} " type="text/css">
-    <link rel="stylesheet" href="{{ asset('storage/BlackJack/css/ios_fullscreen.css')}} " type="text/css">
-    <link rel='shortcut icon' type='image/x-icon' href="{{ asset('storage/BlackJack/favicon.ico')}}" />
+    <link rel="stylesheet" href="{{ asset('storage/Games/BlackJack/css/reset.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('storage/Games/BlackJack/css/main.css')}} " type="text/css">
+    <link rel="stylesheet" href="{{ asset('storage/Games/BlackJack/css/orientation_utils.css')}} " type="text/css">
+    <link rel="stylesheet" href="{{ asset('storage/Games/BlackJack/css/ios_fullscreen.css')}} " type="text/css">
+    <link rel='shortcut icon' type='image/x-icon' href="{{ asset('storage/Games/BlackJack/favicon.ico')}}" />
+    
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-    <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,minimal-ui" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,minimal-ui" />
     <meta name="msapplication-tap-highlight" content="no" />
 
-    <script type="text/javascript" src="{{asset('storage/BlackJack/js/jquery-3.2.1.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('storage/BlackJack/js/createjs-2015.11.26.min.js')}} "></script>
-    <script type="text/javascript" src="{{asset('storage/BlackJack/js/platform.js')}}"></script>
-    <script type="text/javascript" src="{{asset('storage/BlackJack/js/ios_fullscreen.js')}}"></script>
-    <script type="text/javascript" src="{{asset('storage/BlackJack/js/howler.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('storage/BlackJack/js/screenfull.js')}}"></script>
-    <script type="text/javascript" src="{{asset('storage/BlackJack/js/ctl_utils.js')}}"></script>
-    <script type="text/javascript" src="{{asset('storage/BlackJack/js/sprite_lib.js')}}"></script>
-    <script type="text/javascript" src="{{asset('storage/BlackJack/js/settings.js')}}"></script>
-    <script type="text/javascript" src="{{asset('storage/BlackJack/js/CLang.js')}}"></script>
-    <script type="text/javascript" src="{{asset('storage/BlackJack/js/CPreloader.js')}}"></script>
-    <script type="text/javascript" src="{{asset('storage/BlackJack/js/CMain.js')}}"></script>
-    <script type="text/javascript" src="{{asset('storage/BlackJack/js/CTextButton.js')}}"></script>
-    <script type="text/javascript" src="{{asset('storage/BlackJack/js/CGfxButton.js')}}"></script>
-    <script type="text/javascript" src="{{asset('storage/BlackJack/js/CToggle.js')}}"></script>
-    <script type="text/javascript" src="{{asset('storage/BlackJack/js/CMenu.js')}}"></script>
-    <script type="text/javascript" src="{{asset('storage/BlackJack/js/CGame.js')}}"></script>
-    <script type="text/javascript" src="{{asset('storage/BlackJack/js/CInterface.js')}}"></script>
-    <script type="text/javascript" src="{{asset('storage/BlackJack/js/CTweenController.js')}}"></script>
-    <script type="text/javascript" src="{{asset('storage/BlackJack/js/CSeat.js')}}"></script>
-    <script type="text/javascript" src="{{asset('storage/BlackJack/js/CFichesController.js')}}"></script>
-    <script type="text/javascript" src="{{asset('storage/BlackJack/js/CVector2.js')}}"></script>
-    <script type="text/javascript" src="{{asset('storage/BlackJack/js/CGameSettings.js')}}"></script>
-    <script type="text/javascript" src="{{asset('storage/BlackJack/js/CEasing.js')}}"></script>
-    <script type="text/javascript" src="{{asset('storage/BlackJack/js/CHandController.js')}}"></script>
-    <script type="text/javascript" src="{{asset('storage/BlackJack/js/CCard.js')}}"></script>
-    <script type="text/javascript" src="{{asset('storage/BlackJack/js/CInsurancePanel.js')}}"></script>
-    <script type="text/javascript" src="{{asset('storage/BlackJack/js/CGameOver.js')}}"></script>
-    <script type="text/javascript" src="{{asset('storage/BlackJack/js/CMsgBox.js')}}"></script>
-    <script type="text/javascript" src="{{asset('storage/BlackJack/js/CCreditsPanel.js')}}"></script>
-    <script type="text/javascript" src="{{asset('storage/BlackJack/js/CFiche.js')}}"></script>
-    <script type="text/javascript" src="{{asset('storage/BlackJack/js/CCTLText.js')}}"></script>
+    <script type="text/javascript" src="{{asset('storage/Games/BlackJack/js/jquery-3.2.1.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('storage/Games/BlackJack/js/createjs-2015.11.26.min.js')}} "></script>
+    <script type="text/javascript" src="{{asset('storage/Games/BlackJack/js/platform.js')}}"></script>
+    <script type="text/javascript" src="{{asset('storage/Games/BlackJack/js/ios_fullscreen.js')}}"></script>
+    <script type="text/javascript" src="{{asset('storage/Games/BlackJack/js/howler.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('storage/Games/BlackJack/js/screenfull.js')}}"></script>
+    <script type="text/javascript" src="{{asset('storage/Games/BlackJack/js/ctl_utils.js')}}"></script>
+    <script type="text/javascript" src="{{asset('storage/Games/BlackJack/js/sprite_lib.js')}}"></script>
+    <script type="text/javascript" src="{{asset('storage/Games/BlackJack/js/settings.js')}}"></script>
+    <script type="text/javascript" src="{{asset('storage/Games/BlackJack/js/CLang.js')}}"></script>
+    <script type="text/javascript" src="{{asset('storage/Games/BlackJack/js/CPreloader.js')}}"></script>
+    <script type="text/javascript" src="{{asset('storage/Games/BlackJack/js/CMain.js')}}"></script>
+    <script type="text/javascript" src="{{asset('storage/Games/BlackJack/js/CTextButton.js')}}"></script>
+    <script type="text/javascript" src="{{asset('storage/Games/BlackJack/js/CGfxButton.js')}}"></script>
+    <script type="text/javascript" src="{{asset('storage/Games/BlackJack/js/CToggle.js')}}"></script>
+    <script type="text/javascript" src="{{asset('storage/Games/BlackJack/js/CMenu.js')}}"></script>
+    <script type="text/javascript" src="{{asset('storage/Games/BlackJack/js/CGame.js')}}"></script>
+    <script type="text/javascript" src="{{asset('storage/Games/BlackJack/js/CInterface.js')}}"></script>
+    <script type="text/javascript" src="{{asset('storage/Games/BlackJack/js/CTweenController.js')}}"></script>
+    <script type="text/javascript" src="{{asset('storage/Games/BlackJack/js/CSeat.js')}}"></script>
+    <script type="text/javascript" src="{{asset('storage/Games/BlackJack/js/CFichesController.js')}}"></script>
+    <script type="text/javascript" src="{{asset('storage/Games/BlackJack/js/CVector2.js')}}"></script>
+    <script type="text/javascript" src="{{asset('storage/Games/BlackJack/js/CGameSettings.js')}}"></script>
+    <script type="text/javascript" src="{{asset('storage/Games/BlackJack/js/CEasing.js')}}"></script>
+    <script type="text/javascript" src="{{asset('storage/Games/BlackJack/js/CHandController.js')}}"></script>
+    <script type="text/javascript" src="{{asset('storage/Games/BlackJack/js/CCard.js')}}"></script>
+    <script type="text/javascript" src="{{asset('storage/Games/BlackJack/js/CInsurancePanel.js')}}"></script>
+    <script type="text/javascript" src="{{asset('storage/Games/BlackJack/js/CGameOver.js')}}"></script>
+    <script type="text/javascript" src="{{asset('storage/Games/BlackJack/js/CMsgBox.js')}}"></script>
+    <script type="text/javascript" src="{{asset('storage/Games/BlackJack/js/CCreditsPanel.js')}}"></script>
+    <script type="text/javascript" src="{{asset('storage/Games/BlackJack/js/CFiche.js')}}"></script>
+    <script type="text/javascript" src="{{asset('storage/Games/BlackJack/js/CCTLText.js')}}"></script>
 </head>
 
 <body ondragstart="return false;" ondrop="return false;">

@@ -17,18 +17,26 @@ Route::get('/', function () {
     return view('main');
 });
 
-Route::get('/juegoPrueba', function(){
-    return view('juegoPrueba.index');
-});
-
-Route::get('/slotMachine', function(){
-    return view('slotMachine.index');
-});
-
-Route::get('/blackJack', function(){
-    return view('BlackJack.index');
-});
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/BlackJack', function () {
+    return view('Games.BlackJack.try1');
+});
+
+Route::get('/Craps', function () {
+    return view('Games.Craps.index');
+});
+
+Route::get('/Poker', function () {
+    return view('Games.Poker.index');
+});
+
+Route::get('/Roulette', function () {
+    return view('Games.Roulette.index');
+});
+
+Route::get('/SlotMachine', function () {
+    return view('Games.SlotMachine.index');
+});

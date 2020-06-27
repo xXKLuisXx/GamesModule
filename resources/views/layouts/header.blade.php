@@ -1,5 +1,5 @@
 <!-- Metas -->
-@yield('metas', View::make('layouts.metas'))
+{{--@yield('metas', View::make('layouts.metas')) --}}
 
 <!-- Scripts -->
 @yield('scripts', View::make('layouts.scripts'))
