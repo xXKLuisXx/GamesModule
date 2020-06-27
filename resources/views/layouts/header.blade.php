@@ -2,7 +2,7 @@
 {{--@yield('metas', View::make('layouts.metas')) --}}
 
 <!-- Scripts -->
-@yield('scripts', View::make('layouts.scripts'))
+{{-- @yield('scripts', View::make('layouts.scripts')) --}}
 
 <!-- Fonts -->
 @yield('fonts', View::make('layouts.fonts'))
