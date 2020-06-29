@@ -12,31 +12,83 @@ ondragstart="return false;" ondrop="return false;" style="width:100%; position: 
         height: 100%;
         position: fixed;
     }
+
+    /* Container needed to position the button. Adjust the width as needed */
+    .container {
+        position: relative;
+        width: 50%;
+    }
+
+    /* Make the image responsive */
+    .container img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Style the button and place it in the middle of the container/image */
+    .container .btn {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        background-color: #555;
+        color: white;
+        font-size: 16px;
+        padding: 12px 24px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    .container .btn:hover {
+        background-color: black;
+    }
 </style>
 <div class="background-no-game">
     <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
-    <div id="player"></div>
-    <div>
-        <div class="container">
-            <img src="img_snow.jpg" alt="Snow">
-            <button class="btn">Button</button>
+    <div class="ml-3 mt-3">
+        <div id="player"></div>
+    </div>
+    <div class="row row-cols-8">
+        <div class="col-2" style="background-color: black; border-radius: 0 20px 20px 0">
+            <div class="d-flex flex-row my-3 mx-3" style="color: white; align-items: center; font-size: large;">
+                <img src="{{ asset('storage/imgGames/Dices.png') }}" alt="Snow" style="width: 30px; height: auto">
+                <span class="align-middle" style="margin-left: 10px;">Juega</span>
+            </div>
+
         </div>
-        <div class="container">
-            <img src="img_snow.jpg" alt="Snow">
-            <button class="btn">Button</button>
+        <div class="col-10"></div>
+    </div>
+    <div class="m-3">
+        <div style="display: flex">
+            <div class="container">
+                <img src="{{ asset('storage/imgGames/BlackJackBG.jpg') }}" alt="Snow">
+                <a href="{{ url('/BlackJack') }}" class="btn btn-primary btn-lg active" role="button"
+                    aria-pressed="true">Play!</a>
+            </div>
+            <div class="container">
+                <img src="{{ asset('storage/imgGames/CrapsBG.jpg') }}" alt="Snow">
+                <a href="{{ url('/Craps') }}" class="btn btn-primary btn-lg active" role="button"
+                    aria-pressed="true">Play!</a>
+            </div>
+            <div class="container">
+                <img src="{{ asset('storage/imgGames/PokerBG.jpg') }}" alt="Snow">
+                <a href="{{ url('/Poker') }}" class="btn btn-primary btn-lg active" role="button"
+                    aria-pressed="true">Play!</a>
+            </div>
+            <div class="container">
+                <img src="{{ asset('storage/imgGames/RouletteBG.jpg') }}" alt="Snow">
+                <a href="{{ url('/Roulette') }}" class="btn btn-primary btn-lg active" role="button"
+                    aria-pressed="true">Play!</a>
+            </div>
+            <div class="container">
+                <img src="{{ asset('storage/imgGames/FruitSlotsBG.jpg') }}" alt="Snow">
+                <a href="{{ url('/SlotMachine') }}" class="btn btn-primary btn-lg active" role="button"
+                    aria-pressed="true">Play!</a>
+            </div>
         </div>
-        <div class="container">
-            <img src="img_snow.jpg" alt="Snow">
-            <button class="btn">Button</button>
-        </div>
-        <div class="container">
-            <img src="img_snow.jpg" alt="Snow">
-            <button class="btn">Button</button>
-        </div>
-        <div class="container">
-            <img src="img_snow.jpg" alt="Snow">
-            <button class="btn">Button</button>
-        </div>
+
     </div>
     <script>
         // 2. This code loads the IFrame Player API code asynchronously.
