@@ -1,8 +1,16 @@
 <!-- Metas -->
-{{--@yield('metas', View::make('layouts.metas')) --}}
+@if (2>1)
+    
+@else
+    @yield('metas', View::make('layouts.metas'))
+@endif
 
 <!-- Scripts -->
-{{-- @yield('scripts', View::make('layouts.scripts')) --}}
+@if (2>1)
+    
+@else
+    @yield('scripts', View::make('layouts.scripts'))
+@endif
 
 <!-- Fonts -->
 @yield('fonts', View::make('layouts.fonts'))

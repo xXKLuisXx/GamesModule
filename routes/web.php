@@ -22,7 +22,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/BlackJack', function () {
-    return view('Games.BlackJack.try1');
+    return view('Games.BlackJack.index');
 });
 
 Route::get('/Craps', function () {

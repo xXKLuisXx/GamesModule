@@ -6,7 +6,12 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 </head>
 <body @yield('body-config')>
-    @yield('navigation', View::make('layouts.navigation'))
+    @if (!(1>2))
+    
+    @else
+        @yield('navigation', View::make('layouts.navigation'))
+    @endif
+    
     @yield('content')
 </body>
 </html>

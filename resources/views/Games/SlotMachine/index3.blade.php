@@ -3,7 +3,7 @@
 @section('extra-header')
 
 @endsection
-@yield('common', View::make('Games.Roulette.layouts.header'))
+@yield('common', View::make('Games.BlackJack.layouts.header'))
 @section('body-config')
 ondragstart="return false;" ondrop="return false;" style="width:100%; position: fixed;"
 @endsection
@@ -13,13 +13,13 @@ ondragstart="return false;" ondrop="return false;" style="width:100%; position: 
 <div style="">
     <div style="position: fixed; background-color: transparent; top: 0px; left: 0px; width: 100%; height: 100%"></div>
 <!-- Functions -->
-@yield('functions', View::make('Games.Roulette.layouts.functions'))
+@yield('functions', View::make('Games.BlackJack.layouts.functions'))
 <div class="check-fonts">
     <p class="check-font-1">test 1</p>
 </div>
 
 <div>
-    <canvas id="canvas" class='ani_hack' width="750" height="600"> </canvas>
+    <canvas id="canvas" class='ani_hack' width="1600" height="640"> </canvas>
 </div>
 
 

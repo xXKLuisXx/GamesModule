@@ -7,8 +7,8 @@
         <link rel="stylesheet" href=" {{ asset('storage/Games/SlotMachine/css/orientation_utils.css') }} " type="text/css">
         <link rel="stylesheet" href=" {{ asset('storage/Games/SlotMachine/css/ios_fullscreen.css') }} " type="text/css">
         <link rel='shortcut icon' type='image/x-icon' href='./favicon.ico' />
+        
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, minimal-ui" />
         <meta name="msapplication-tap-highlight" content="no"/>
 

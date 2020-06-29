@@ -19,7 +19,7 @@ ondragstart="return false;" ondrop="return false;" style="width:100%; position: 
 </div>
 
 <div>
-    <canvas id="canvas" class='ani_hack' width="100%" height="650px"> </canvas>
+    <canvas id="canvas" class='ani_hack' width="1700" height="768"> </canvas>
 </div>
 
 
