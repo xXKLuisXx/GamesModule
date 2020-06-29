@@ -14,29 +14,37 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('main');
+    return view('welcome');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/BlackJack', function () {
-    return view('Games.BlackJack.index');
+Route::get('/inicio', function ($isGame = true) {
+    return view('Games.BlackJack.index', compact('isGame'));
 });
 
-Route::get('/Craps', function () {
-    return view('Games.Craps.index');
+Route::get('/BlackJack', function ($isGame = true) {
+    return view('Games.BlackJack.index', compact('isGame'));
 });
 
-Route::get('/Poker', function () {
+Route::get('/Craps', function ($isGame = true) {
+    return view('Games.Craps.index', compact('isGame'));
+});
+
+Route::get('/Poker', function ($isGame = true) {
     return view('Games.Poker.index');
 });
 
-Route::get('/Roulette', function () {
+Route::get('/Roulette', function ($isGame = true) {
     return view('Games.Roulette.index');
 });
 
-Route::get('/SlotMachine', function () {
+Route::get('/SlotMachine', function ($isGame = true) {
     return view('Games.SlotMachine.index');
+});
+
+Route::get('/juegoPrueba', function ($isGame = true) {
+    return view('Games.JuegoPrueba.index');
 });

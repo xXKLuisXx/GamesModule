@@ -1,14 +1,7 @@
-<!-- Metas -->
-@if (2>1)
-    
-@else
+@if (!$isGame)
+    <!-- Metas -->    
     @yield('metas', View::make('layouts.metas'))
-@endif
-
-<!-- Scripts -->
-@if (2>1)
-    
-@else
+    <!-- Scripts -->
     @yield('scripts', View::make('layouts.scripts'))
 @endif
 
