@@ -88,6 +88,6 @@ class BalanceController extends Controller
 
         \Log::info($input);
    
-        return response()->json(['total_credits'=> 180]);
+        return response()->json(['total_credits'=> 999]);
     }
 }

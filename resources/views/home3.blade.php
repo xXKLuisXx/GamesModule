@@ -71,29 +71,6 @@ ondragstart="return false;" ondrop="return false;" style="width:100%;"
   </div>
 </div>
 
-
-{{-- 
-<script type="text/javascript">
-var result;
-      $(".btn-submit").click(function(e){
-    
-          e.preventDefault();
-          var name = $("input[name=name]").val();
-          var password = $("input[name=password]").val();
-          var email = $("input[name=email]").val();
-     
-          result = $.ajax({
-             type:'POST',
-             url:" {{ action('BalanceController@ajaxRequestPost') }} ",
-data:{name:name, password:password, email:email, "_token": "{{ csrf_token() }}" },
-success:function(data){
-alert(data.success);
-}
-});
-});
-</script>
---}}
-
 <script>
   // 2. This code loads the IFrame Player API code asynchronously.
           var tag = document.createElement('script');
