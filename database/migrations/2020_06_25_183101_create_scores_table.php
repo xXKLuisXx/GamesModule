@@ -15,6 +15,9 @@ class CreateScoresTable extends Migration
     {
         Schema::create('scores', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id');
+            $table->foreignId('game_id');
+            $table->unsignedBigInteger('score'); // total wins / total loses
             $table->timestamps();
         });
     }

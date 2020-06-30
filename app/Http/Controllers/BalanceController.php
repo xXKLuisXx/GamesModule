@@ -85,8 +85,9 @@ class BalanceController extends Controller
     public function ajaxRequestPost(Request $request)
     {
         $input = $request->all();
+
         \Log::info($input);
    
-        return response()->json(['success'=>'Got Simple Ajax Request.']);
+        return response()->json(['total_credits'=> 180]);
     }
 }

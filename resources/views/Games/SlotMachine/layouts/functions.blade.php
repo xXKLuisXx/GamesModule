@@ -7,7 +7,8 @@
                             reel_delay: 6,            //NUMBER OF FRAMES TO DELAY THE REELS THAT START AFTER THE FIRST ONE
                             time_show_win:2000,       //DURATION IN MILLISECONDS OF THE WINNING COMBO SHOWING
                             time_show_all_wins: 2000, //DURATION IN MILLISECONDS OF ALL WINNING COMBO
-                            money:999,               //STARING CREDIT FOR THE USER
+                            money: getActualCredits(),               
+                            //STARING CREDIT FOR THE USER
                             
                             /***********PAYTABLE********************/
                             //EACH SYMBOL PAYTABLE HAS 5 VALUES THAT INDICATES THE MULTIPLIER FOR X1,X2,X3,X4 OR X5 COMBOS

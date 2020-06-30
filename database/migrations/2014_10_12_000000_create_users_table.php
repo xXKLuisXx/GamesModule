@@ -8,7 +8,7 @@ class CreateUsersTable extends Migration
 {
     /**
      * Run the migrations.
-     *
+     * 
      * @return void
      */
     public function up()
@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->foreignId('role_id');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->float('total_credits')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

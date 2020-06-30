@@ -15,6 +15,12 @@ class CreateBalancesTable extends Migration
     {
         Schema::create('balances', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id');
+            $table->foreignId('game_id');
+            $table->float('after_credits')->nullable();
+            $table->float('before_credits')->nullable();
+            $table->float('lost_credits')->nullable();
+            $table->float('win_credits')->nullable();
             $table->timestamps();
         });
     }

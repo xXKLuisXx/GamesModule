@@ -17,6 +17,7 @@ class UserSeeder extends Seeder
         $user->name = "admin";
         $user->email = "admin@admin.com";
         $user->role_id = 1;
+        $user->total_credits = 999;
         $user->password = Hash::make('admin');
 
         $user->save();
@@ -25,6 +26,7 @@ class UserSeeder extends Seeder
         $user->name = "prueba";
         $user->email = "prueba@prueba.com";
         $user->role_id = 2;
+        $user->total_credits = 100;
         $user->password = Hash::make('prueba');
 
         $user->save();
