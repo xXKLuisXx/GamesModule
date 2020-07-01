@@ -39,73 +39,91 @@
                 /////////////////// YOU CAN GET IT AT: ///////////////////////////////////////////////////////// 
                 // http://codecanyon.net/item/ctl-arcade-wordpress-plugin/13856421///////////
             });
-            return oMain;
-        }
-
-            
-        $(oMain).on("recharge", function (evt) {
+            $(oMain).on("recharge", function (evt) {
             //INSERT HERE YOUR RECHARGE SCRIPT THAT RETURN MONEY TO RECHARGE
-            var iMoney = 100; // cambiar este codigo 
-            if(s_oGame !== null){
-                s_oGame.setMoney(iMoney);
-            }
-        });
-    
-    
-        $(oMain).on("start_session", function (evt) {
-            if(getParamValue('ctl-arcade') === "true"){
-                parent.__ctlArcadeStartSession();
-            }
-            //...ADD YOUR CODE HERE EVENTUALLY
-        });
-
-        $(oMain).on("end_session", function (evt) {
-            if(getParamValue('ctl-arcade') === "true"){
-                parent.__ctlArcadeEndSession();
-            }
-            //...ADD YOUR CODE HERE EVENTUALLY
-        });
-        
-        $(oMain).on("bet_placed", function (evt, oBetInfo) {
-            var iBet = oBetInfo.bet;
-            var iTotBet = oBetInfo.tot_bet;
-            console.log(oBetInfo)
-            //...ADD YOUR CODE HERE EVENTUALLY
-        });
-    
-        $(oMain).on("save_score", function (evt, iMoney) {
-            if(getParamValue('ctl-arcade') === "true"){
-                parent.__ctlArcadeSaveScore({score:iMoney});
-            }
-            console.log(iMoney);
-            //...ADD YOUR CODE HERE EVENTUALLY
-        });
-        
-        $(oMain).on("show_preroll_ad", function (evt) {
-            //...ADD YOUR CODE HERE EVENTUALLY
-        });
-        
-        $(oMain).on("show_interlevel_ad", function (evt) {
-            if(getParamValue('ctl-arcade') === "true"){
-                parent.__ctlArcadeShowInterlevelAD();
-            }
-            //...ADD YOUR CODE HERE EVENTUALLY
-        });
-
-        $(oMain).on("share_event", function(evt, iScore) {
-                if(getParamValue('ctl-arcade') === "true"){
-                    parent.__ctlArcadeShareEvent({   
-                                                    img: TEXT_SHARE_IMAGE,
-                                                    title: TEXT_SHARE_TITLE,
-                                                    msg: TEXT_SHARE_MSG1 + iScore+ TEXT_SHARE_MSG2,
-                                                    msg_share: TEXT_SHARE_SHARE1 + iScore + TEXT_SHARE_SHARE1});
+                var iMoney = 100; // cambiar este codigo 
+                if(s_oGame !== null){
+                    s_oGame.setMoney(iMoney);
                 }
-        });
+            });
+        
+            $(oMain).on("start_session", function (evt) {
+                if(getParamValue('ctl-arcade') === "true"){
+                    parent.__ctlArcadeStartSession();
+                }
+                //...ADD YOUR CODE HERE EVENTUALLY
+            });
+
+            $(oMain).on("end_session", function (evt) {
+                if(getParamValue('ctl-arcade') === "true"){
+                    parent.__ctlArcadeEndSession();
+                }
+                //...ADD YOUR CODE HERE EVENTUALLY
+            });
             
+
+            $(oMain).on("bet_placed", function (evt, oBetInfo) {
+                var iBet = oBetInfo.bet;
+                var iTotBet = oBetInfo.tot_bet;
+
+                setNewCredits(-oBetInfo.tot_bet);
+                console.log(oBetInfo);
+                console.log("entra");
+                //parent.__ctlArcadeSaveScore({score:500});
+                //...ADD YOUR CODE HERE EVENTUALLY
+            });
+        
+            $(oMain).on("save_score", function (evt, iMoney) {
+                if(getParamValue('ctl-arcade') === "true"){
+                    parent.__ctlArcadeSaveScore({score:iMoney});
+                }
+                getActualCredits().then(r =>{
+                    console.log(r);
+                    var credits_div = document.getElementById("credits_div");
+                    credits_div.innerText = r;
+                }).catch(() => {
+                    console.log('Algo salió mal');
+                });
+                
+                //...ADD YOUR CODE HERE EVENTUALLY
+            });
+            
+            $(oMain).on("show_preroll_ad", function (evt) {
+                //...ADD YOUR CODE HERE EVENTUALLY
+            });
+            
+            $(oMain).on("show_interlevel_ad", function (evt) {
+                if(getParamValue('ctl-arcade') === "true"){
+                    parent.__ctlArcadeShowInterlevelAD();
+                }
+                //...ADD YOUR CODE HERE EVENTUALLY
+            });
+
+            $(oMain).on("share_event", function(evt, iScore) {
+                    if(getParamValue('ctl-arcade') === "true"){
+                        parent.__ctlArcadeShareEvent({   
+                                                        img: TEXT_SHARE_IMAGE,
+                                                        title: TEXT_SHARE_TITLE,
+                                                        msg: TEXT_SHARE_MSG1 + iScore+ TEXT_SHARE_MSG2,
+                                                        msg_share: TEXT_SHARE_SHARE1 + iScore + TEXT_SHARE_SHARE1});
+                    }
+            });
+            return oMain;
+        };
         if(isIOS()){
             setTimeout(function(){sizeHandler();},200);
         }else{
-            sizeHandler();
+            var checkExist = setInterval(function() {
+                if ($('#canvas').length) {
+                    sizeHandler();
+                    console.log("Exists!");
+                    clearInterval(checkExist);
+                    
+                }else {
+                    console.log("Doesn't exist")
+                }
+            }, 100);
+            console.log("fin")
         }
    });
 

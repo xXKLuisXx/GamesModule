@@ -81,7 +81,16 @@
         if(isIOS()){
             setTimeout(function(){sizeHandler();},200);
         }else{
-            sizeHandler();
+            var checkExist = setInterval(function() {
+                if ($('#canvas').length) {
+                    sizeHandler();
+                    console.log("Exists!");
+                    clearInterval(checkExist);
+                    
+                }else {
+                    console.log("Doesn't exist")
+                }
+            }, 100);
         }
    });
 

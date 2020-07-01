@@ -84,7 +84,7 @@
   background: linear-gradient(90deg, #101623, #1b2640 100%);
   width: 100%;
   height: 100%;
-  /* position: fixed; */
+  position: fixed; 
 }
 
 /* Container needed to position the button. Adjust the width as needed */

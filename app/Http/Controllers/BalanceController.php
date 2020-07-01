@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Balance;
 use Illuminate\Http\Request;
+use Auth;
 
 class BalanceController extends Controller
 {
@@ -85,9 +86,19 @@ class BalanceController extends Controller
     public function ajaxRequestPost(Request $request)
     {
         $input = $request->all();
-
+        
         \Log::info($input);
-   
-        return response()->json(['total_credits'=> 999]);
+
+        return response()->json(['total_credits'=> Auth::user()->total_credits]);
+    }
+    public function ajaxRequestInsert(Request $request){
+        $input = $request->all();
+        //\Log::info($input);
+        //dd($input);
+        $user = Auth::user();
+        $user->total_credits = $user->total_credits + $input['update_credits'];
+        $user->save();
+
+        return response()->json(['success'=> 1]);
     }
 }

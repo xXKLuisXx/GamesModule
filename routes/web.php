@@ -49,4 +49,6 @@ Route::get('/juegoPrueba', function () {
     return view('Games.JuegoPrueba.index', ['isGame' => true]);
 });
 
-Route::post('/ajax', 'BalanceController@ajaxRequestPost');
+Route::post('/GetGame', 'BalanceController@ajaxRequestPost');
+
+Route::post('/InsertGame', 'BalanceController@ajaxRequestInsert');

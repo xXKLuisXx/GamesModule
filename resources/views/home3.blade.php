@@ -1,4 +1,4 @@
-@extends('layouts.main', ['isGame' => $isGame])
+@extends('layouts.main')
 
 @section('body-config')
 ondragstart="return false;" ondrop="return false;" style="width:100%;"
@@ -46,28 +46,6 @@ ondragstart="return false;" ondrop="return false;" style="width:100%;"
           aria-pressed="true">Play!</a>
       </div>
     </div>
-    <form>
-
-      <div class="form-group">
-        <label>Name:</label>
-        <input type="text" name="name" class="form-control" placeholder="Name" required="">
-      </div>
-
-      <div class="form-group">
-        <label>Password:</label>
-        <input type="password" name="password" class="form-control" placeholder="Password" required="">
-      </div>
-
-      <div class="form-group">
-        <strong>Email:</strong>
-        <input type="email" name="email" class="form-control" placeholder="Email" required="">
-      </div>
-
-      <div class="form-group">
-        <button class="btn btn-success btn-submit">Submit</button>
-      </div>
-
-    </form>
   </div>
 </div>
 
