@@ -64,6 +64,11 @@
                     parent.__ctlArcadeSaveScore({score:iMoney});
                 }
                 //...ADD YOUR CODE HERE EVENTUALLY
+                getActualCredits().then(r =>{
+                    setNewCreditsView(r);
+                }).catch(() => {
+                    console.log('Algo salió mal');
+                });
             });
             
             $(oMain).on("show_interlevel_ad", function(evt) {

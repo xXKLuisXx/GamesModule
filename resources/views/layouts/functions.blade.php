@@ -23,4 +23,9 @@
             });
     }
 
+    function setNewCreditsView(credits){
+        var credits_div = document.getElementById("credits_div");
+        credits_div.innerText = credits;
+    }
+
 </script>

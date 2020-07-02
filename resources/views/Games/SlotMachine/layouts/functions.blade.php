@@ -67,10 +67,6 @@
                 var iTotBet = oBetInfo.tot_bet;
 
                 setNewCredits(-oBetInfo.tot_bet);
-                console.log(oBetInfo);
-                console.log("entra");
-                //parent.__ctlArcadeSaveScore({score:500});
-                //...ADD YOUR CODE HERE EVENTUALLY
             });
         
             $(oMain).on("save_score", function (evt, iMoney) {
@@ -78,9 +74,7 @@
                     parent.__ctlArcadeSaveScore({score:iMoney});
                 }
                 getActualCredits().then(r =>{
-                    console.log(r);
-                    var credits_div = document.getElementById("credits_div");
-                    credits_div.innerText = r;
+                    setNewCreditsView(r);
                 }).catch(() => {
                     console.log('Algo salió mal');
                 });
@@ -123,7 +117,7 @@
                     console.log("Doesn't exist")
                 }
             }, 100);
-            console.log("fin")
+            //console.log("fin")
         }
    });
 

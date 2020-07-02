@@ -27,61 +27,62 @@
                                 /////////////////// YOU CAN GET IT AT: /////////////////////////////////////////////////////////
                                 // http://codecanyon.net/item/ctl-arcade-wordpress-plugin/13856421 ///////////
                             });
-            return oMain;
-        };
-                 
-
-
-                 
-        $(oMain).on("recharge", function(evt) {
-                    //INSERT HERE YOUR RECHARGE SCRIPT THAT RETURN MONEY TO RECHARGE
+            $(oMain).on("recharge", function(evt) {
+                //INSERT HERE YOUR RECHARGE SCRIPT THAT RETURN MONEY TO RECHARGE
                 var iMoney = 1000;
                 if(s_oGame !== null){
                     s_oGame.setMoney(iMoney);
                 }
-        });
+            });
+            
+            $(oMain).on("bet_placed", function (evt, iTotBet) {
+                //...ADD YOUR CODE HERE EVENTUALLY
+            });
         
-        $(oMain).on("bet_placed", function (evt, iTotBet) {
-            //...ADD YOUR CODE HERE EVENTUALLY
-        });
-    
-        $(oMain).on("start_session", function(evt) {
-            if(getParamValue('ctl-arcade') === "true"){
-                parent.__ctlArcadeStartSession();
-            }
-            //...ADD YOUR CODE HERE EVENTUALLY
-        });
+            $(oMain).on("start_session", function(evt) {
+                if(getParamValue('ctl-arcade') === "true"){
+                    parent.__ctlArcadeStartSession();
+                }
+                //...ADD YOUR CODE HERE EVENTUALLY
+            });
 
-        $(oMain).on("end_session", function(evt) {
+            $(oMain).on("end_session", function(evt) {
                 if(getParamValue('ctl-arcade') === "true"){
                     parent.__ctlArcadeEndSession();
                 }
                 //...ADD YOUR CODE HERE EVENTUALLY
-        });
+            });
 
 
-        $(oMain).on("save_score", function(evt,iScore) {
+            $(oMain).on("save_score", function(evt,iScore) {
                 if(getParamValue('ctl-arcade') === "true"){
                     parent.__ctlArcadeSaveScore({score:iScore});
                 }
+                getActualCredits().then(r =>{
+                    setNewCreditsView(r);
+                }).catch(() => {
+                    console.log('Algo salió mal');
+                });
                 //...ADD YOUR CODE HERE EVENTUALLY
-        });
+            });
 
-        $(oMain).on("show_interlevel_ad", function(evt) {
+            $(oMain).on("show_interlevel_ad", function(evt) {
                 if(getParamValue('ctl-arcade') === "true"){
                     parent.__ctlArcadeShowInterlevelAD();
                 }
                 //...ADD YOUR CODE HERE EVENTUALLY
-        });
+            });
 
-        $(oMain).on("share_event", function(evt, iScore) {
+            $(oMain).on("share_event", function(evt, iScore) {
                 if(getParamValue('ctl-arcade') === "true"){
                     parent.__ctlArcadeShareEvent({   img: TEXT_SHARE_IMAGE,
                                                     title: TEXT_SHARE_TITLE,
                                                     msg: TEXT_SHARE_MSG1 + iScore + TEXT_SHARE_MSG2,
                                                     msg_share: TEXT_SHARE_SHARE1 + iScore + TEXT_SHARE_SHARE1});
                 }
-        });
+            });
+            return oMain;
+        };
         
         if (isIOS()) {
             setTimeout(function () {
