@@ -5,7 +5,7 @@
                 <img class="ico-exchange" src="{{ asset('storage/logo/MxBg.jpg')}}" alt="">
             </div>
             <div class="text-exchange">
-                <span style="float: right;">{{ Auth::user()->total_credits }} $</span>
+                <span id="credits_div" style="float: right;">{{ Auth::user()->total_credits }} $</span>
             </div>
         </div>
         <div class="credits-font separate-exchange">
@@ -13,7 +13,7 @@
                 <img class="ico-exchange" src="{{ asset('storage/logo/MxBg.jpg')}}" alt="">
             </div>
             <div class="text-exchange">
-                <span style="float: right;">{{ Auth::user()->total_credits }} $</span>
+                <span id="credits_div" style="float: right;">{{ Auth::user()->total_credits }} $</span>
             </div>
         </div>
         <div class="credits-font separate-exchange">
@@ -21,7 +21,7 @@
                 <img class="ico-exchange" src="{{ asset('storage/logo/MxBg.jpg')}}" alt="">
             </div>
             <div class="text-exchange">
-                <span style="float: right;">{{ Auth::user()->total_credits }} $</span>
+                <span id="credits_div" style="float: right;">{{ Auth::user()->total_credits }} $</span>
             </div>
         </div>
     </div>

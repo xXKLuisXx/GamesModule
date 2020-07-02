@@ -26,62 +26,66 @@
                 /////////////////// YOU CAN GET IT AT: /////////////////////////////////////////////////////////
                 // http://codecanyon.net/item/ctl-arcade-wordpress-plugin/13856421 ///////////
             });
+
+            $(oMain).on("recharge", function(evt) {
+                var iMoney = 1000;
+                if(s_oGame !== null){
+                    s_oGame.onRecharge(iMoney);
+                }
+            });
+            
+            $(oMain).on("bet_placed", function (evt, iTotBet) {
+                //...ADD YOUR CODE HERE EVENTUALLY
+                //sumar a la base de datos
+                console.log("bet placed: ", iTotBet);
+            });
+        
+            $(oMain).on("clear_bet", function (evt, iTotBet) {
+                //...ADD YOUR CODE HERE EVENTUALLY
+                setNewCredits(iTotBet);
+            });
+        
+            $(oMain).on("start_session", function(evt) {
+                if(getParamValue('ctl-arcade') === "true"){
+                    parent.__ctlArcadeStartSession();
+                }
+                //...ADD YOUR CODE HERE EVENTUALLY
+            });
+            
+            $(oMain).on("end_session", function(evt) {
+                if(getParamValue('ctl-arcade') === "true"){
+                    parent.__ctlArcadeEndSession();
+                }
+                //...ADD YOUR CODE HERE EVENTUALLY
+            });
+            
+            $(oMain).on("save_score", function(evt,iMoney) {
+                if(getParamValue('ctl-arcade') === "true"){
+                    parent.__ctlArcadeSaveScore({score:iMoney});
+                }
+                //...ADD YOUR CODE HERE EVENTUALLY
+            });
+            
+            $(oMain).on("show_interlevel_ad", function(evt) {
+                if(getParamValue('ctl-arcade') === "true"){
+                    parent.__ctlArcadeShowInterlevelAD();
+                }
+                //...ADD YOUR CODE HERE EVENTUALLY
+            });
+            
+            $(oMain).on("share_event", function(evt,iMoney) {
+                if(getParamValue('ctl-arcade') === "true"){
+                    parent.__ctlArcadeShareEvent({ img:"200x200.jpg",
+                                                    title:TEXT_CONGRATULATIONS,
+                                                    msg:TEXT_SHARE_1 + iMoney + TEXT_SHARE_2,
+                                                    msg_share:TEXT_SHARE_3 + iMoney + TEXT_SHARE_4
+                                                });
+                }
+                //...ADD YOUR CODE HERE EVENTUALLY
+            });
+
             return oMain;
         }
-             
-        $(oMain).on("recharge", function(evt) {
-            var iMoney = 1000;
-            if(s_oGame !== null){
-                s_oGame.onRecharge(iMoney);
-            }
-        });
-        
-        $(oMain).on("bet_placed", function (evt, iTotBet) {
-            //...ADD YOUR CODE HERE EVENTUALLY
-        });
-    
-        $(oMain).on("clear_bet", function (evt, iTotBet) {
-            //...ADD YOUR CODE HERE EVENTUALLY
-        });
-    
-        $(oMain).on("start_session", function(evt) {
-            if(getParamValue('ctl-arcade') === "true"){
-                parent.__ctlArcadeStartSession();
-            }
-            //...ADD YOUR CODE HERE EVENTUALLY
-        });
-        
-        $(oMain).on("end_session", function(evt) {
-            if(getParamValue('ctl-arcade') === "true"){
-                parent.__ctlArcadeEndSession();
-            }
-            //...ADD YOUR CODE HERE EVENTUALLY
-        });
-        
-        $(oMain).on("save_score", function(evt,iMoney) {
-            if(getParamValue('ctl-arcade') === "true"){
-                parent.__ctlArcadeSaveScore({score:iMoney});
-            }
-            //...ADD YOUR CODE HERE EVENTUALLY
-        });
-        
-        $(oMain).on("show_interlevel_ad", function(evt) {
-            if(getParamValue('ctl-arcade') === "true"){
-                parent.__ctlArcadeShowInterlevelAD();
-            }
-            //...ADD YOUR CODE HERE EVENTUALLY
-        });
-        
-        $(oMain).on("share_event", function(evt,iMoney) {
-            if(getParamValue('ctl-arcade') === "true"){
-                parent.__ctlArcadeShareEvent({ img:"200x200.jpg",
-                                                title:TEXT_CONGRATULATIONS,
-                                                msg:TEXT_SHARE_1 + iMoney + TEXT_SHARE_2,
-                                                msg_share:TEXT_SHARE_3 + iMoney + TEXT_SHARE_4
-                                            });
-            }
-            //...ADD YOUR CODE HERE EVENTUALLY
-        });
         
         if(isIOS()){
             setTimeout(function(){sizeHandler();},200);
