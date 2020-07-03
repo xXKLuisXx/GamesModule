@@ -15,7 +15,11 @@ class BalanceController extends Controller
      */
     public function index()
     {
-        //
+        //$balances = \App\Balance::where('user_id', '=', Auth::user()->id)->paginate(2);
+        
+        $balances = Auth::user()->balances()->paginate(2);
+        //dd($balances);
+        return view('balances', ['isGame' => false, 'balances' => $balances]);
     }
 
     /**
@@ -96,9 +100,23 @@ class BalanceController extends Controller
         //\Log::info($input);
         //dd($input);
         $user = Auth::user();
-        $user->total_credits = $user->total_credits + $input['update_credits'];
+        $balance = new Balance();
+        $balance->user_id = $user->id;
+        $balance->game_id = $input['game_id'];
+        $balance->before_credits = $user->total_credits;
+        $balance->after_credits = $user->total_credits + $input['update_credits'];
+        if( $input['update_credits'] <= 0){
+            $balance->lost_credits = $input['update_credits'];
+            $balance->win_credits = 0;
+        }else {
+            $balance->win_credits = $input['update_credits'];
+            $balance->lost_credits = 0;
+        }
+        $balance->save();
+        $user->total_credits = $balance->after_credits;
         $user->save();
 
+        
         return response()->json(['success'=> 1]);
     }
 }

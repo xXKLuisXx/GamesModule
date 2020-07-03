@@ -42,7 +42,7 @@
         
             $(oMain).on("clear_bet", function (evt, iTotBet) {
                 //...ADD YOUR CODE HERE EVENTUALLY
-                setNewCredits(iTotBet);
+                setNewCredits(iTotBet, 5);
             });
         
             $(oMain).on("start_session", function(evt) {

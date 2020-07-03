@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Score;
 use App\Role;
+use App\Balance;
 
 class User extends Authenticatable
 {
@@ -41,6 +42,10 @@ class User extends Authenticatable
 
     public function scores(){
         return $this->hasMany(Score::class);
+    }
+
+    public function balances() {
+        return $this->hasMany(Balance::class);
     }
 
     public function role(){

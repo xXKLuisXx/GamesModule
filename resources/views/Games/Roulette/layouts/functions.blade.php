@@ -24,59 +24,59 @@
                 show_credits:true,           //SET THIS VALUE TO FALSE IF YOU DON'T TO SHOW CREDITS BUTTON
                 num_hand_before_ads:10  //NUMBER OF HANDS TO COMPLETE, BEFORE TRIGGERING SAVE_SCORE EVENT. USEFUL FOR INTER-LEVEL AD EVENTUALLY.
             });
-            return oMain;
-        }
-
-        $(oMain).on("recharge", function(evt) {
-            //INSERT HERE YOUR RECHARGE SCRIPT THAT RETURN MONEY TO RECHARGE
-            var iMoney = 1000;
-            if(s_oGame !== null){
-                s_oGame.setMoney(iMoney);
-            }
-        });
-             
-        $(oMain).on("start_session", function(evt) {
-            if(getParamValue('ctl-arcade') === "true"){
-                parent.__ctlArcadeStartSession();
-            }
-            //...ADD YOUR CODE HERE EVENTUALLY
-        });
-             
-        $(oMain).on("end_session", function(evt) {
+            $(oMain).on("recharge", function(evt) {
+                //INSERT HERE YOUR RECHARGE SCRIPT THAT RETURN MONEY TO RECHARGE
+                var iMoney = 1000;
+                if(s_oGame !== null){
+                    s_oGame.setMoney(iMoney);
+                }
+            });
+                
+            $(oMain).on("start_session", function(evt) {
                 if(getParamValue('ctl-arcade') === "true"){
-                    parent.__ctlArcadeEndSession();
+                    parent.__ctlArcadeStartSession();
                 }
                 //...ADD YOUR CODE HERE EVENTUALLY
-        });
-             
-        $(oMain).on("bet_placed", function (evt, iTotBet) {
-            //...ADD YOUR CODE HERE EVENTUALLY
-        });
-            
-        $(oMain).on("save_score", function(evt,iMoney,iWin) {
-            if(getParamValue('ctl-arcade') === "true"){
-                parent.__ctlArcadeSaveScore({score:iMoney});
-            }
-            //...ADD YOUR CODE HERE EVENTUALLY
-        });
-             
-        $(oMain).on("show_interlevel_ad", function(evt) {
-            if(getParamValue('ctl-arcade') === "true"){
-                parent.__ctlArcadeShowInterlevelAD();
-            }
-            //...ADD YOUR CODE HERE EVENTUALLY
-        });
-             
-        $(oMain).on("share_event", function(evt,iMoney) {
-            if(getParamValue('ctl-arcade') === "true"){
-                parent.__ctlArcadeShareEvent({ img:"200x200.jpg",
-                                                title:TEXT_CONGRATULATIONS,
-                                                msg:TEXT_SHARE_1 + iMoney + TEXT_SHARE_2,
-                                                msg_share:TEXT_SHARE_3 + iMoney + TEXT_SHARE_4
-                                            });
-            }
-            //...ADD YOUR CODE HERE EVENTUALLY
-        });
+            });
+                
+            $(oMain).on("end_session", function(evt) {
+                    if(getParamValue('ctl-arcade') === "true"){
+                        parent.__ctlArcadeEndSession();
+                    }
+                    //...ADD YOUR CODE HERE EVENTUALLY
+            });
+                
+            $(oMain).on("bet_placed", function (evt, iTotBet) {
+                //...ADD YOUR CODE HERE EVENTUALLY
+            });
+                
+            $(oMain).on("save_score", function(evt,iMoney,iWin) {
+                if(getParamValue('ctl-arcade') === "true"){
+                    parent.__ctlArcadeSaveScore({score:iMoney});
+                }
+                //...ADD YOUR CODE HERE EVENTUALLY
+                setNewCreditsView(iMoney);
+            });
+                
+            $(oMain).on("show_interlevel_ad", function(evt) {
+                if(getParamValue('ctl-arcade') === "true"){
+                    parent.__ctlArcadeShowInterlevelAD();
+                }
+                //...ADD YOUR CODE HERE EVENTUALLY
+            });
+                
+            $(oMain).on("share_event", function(evt,iMoney) {
+                if(getParamValue('ctl-arcade') === "true"){
+                    parent.__ctlArcadeShareEvent({ img:"200x200.jpg",
+                                                    title:TEXT_CONGRATULATIONS,
+                                                    msg:TEXT_SHARE_1 + iMoney + TEXT_SHARE_2,
+                                                    msg_share:TEXT_SHARE_3 + iMoney + TEXT_SHARE_4
+                                                });
+                }
+                //...ADD YOUR CODE HERE EVENTUALLY
+            });
+            return oMain;
+        }
              
         if(isIOS()){
             setTimeout(function(){sizeHandler();},200);

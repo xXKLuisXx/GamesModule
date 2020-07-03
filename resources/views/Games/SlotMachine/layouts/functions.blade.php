@@ -65,8 +65,7 @@
             $(oMain).on("bet_placed", function (evt, oBetInfo) {
                 var iBet = oBetInfo.bet;
                 var iTotBet = oBetInfo.tot_bet;
-
-                setNewCredits(-oBetInfo.tot_bet);
+                setNewCredits((-oBetInfo.tot_bet), 3);
             });
         
             $(oMain).on("save_score", function (evt, iMoney) {
