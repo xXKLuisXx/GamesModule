@@ -27,6 +27,10 @@ Route::get('/inicio', function () {
     return view('Games.BlackJack.index');
 });
 
+Route::get('/Recargar', function () {
+    return view('Recharge', ['isGame' => false]);
+});
+
 Route::get('/BlackJack', function () {
     return view('Games.BlackJack.index', ['isGame' => true]);
 });

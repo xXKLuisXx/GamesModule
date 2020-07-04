@@ -17,7 +17,7 @@ class BalanceController extends Controller
     {
         //$balances = \App\Balance::where('user_id', '=', Auth::user()->id)->paginate(2);
         
-        $balances = Auth::user()->balances()->paginate(2);
+        $balances = Auth::user()->balances()->paginate(10);
         //dd($balances);
         return view('balances', ['isGame' => false, 'balances' => $balances]);
     }
