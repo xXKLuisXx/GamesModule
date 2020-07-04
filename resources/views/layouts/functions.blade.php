@@ -1,4 +1,5 @@
 <script>
+    
     function getActualCredits(){
         return new Promise(function(resolve, reject) {
             var result = $.ajax({
@@ -23,10 +24,26 @@
             });
     }
 
+
+    function getUsFromCredits(credits){
+        let dollarValue = 20;
+        return credits / dollarValue;
+    }
+
+    function getMxFromDollar(credits){
+        let mxValue = 25;
+        return getUsFromCredits(credits) * mxValue;
+    }
+
     function setNewCreditsView(credits){
         var credits_div = document.getElementById("goicoin_div");
-        var goicoin_credits = 0
-        var mx_credits = 0
-        credits_div.innerText = credits;
+        var mx_div = document.getElementById("mx_div");
+        var us_div = document.getElementById("us_div");
+
+        credits_div.innerText = credits + " $";
+        us_div.innerText = getUsFromCredits(credits).toFixed(2) + " $";
+        mx_div.innerText = getMxFromDollar(credits).toFixed(2) + " $";
+        
+        
     }
 </script>

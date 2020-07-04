@@ -18,7 +18,7 @@
         <a class="nav-link navigation-font" href="{{ route('balance.index') }}">Balance</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link navigation-font" href="#">Recargar</a>
+        <a class="nav-link navigation-font" href=" {{ url('/Recargar') }} ">Recargar</a>
       </li>
     </ul>
 

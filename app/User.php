@@ -51,4 +51,12 @@ class User extends Authenticatable
     public function role(){
         return $this->hasOne(Role::class);
     }
+
+    public function usCredits() {
+        return $this->total_credits / 20;
+    }
+
+    public function mxCredits() {
+        return  $this->usCredits() * 25;
+    }
 }
