@@ -11,55 +11,59 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <!-- Left Side Of Navbar -->
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link navigation-font" href=" {{ route('home') }} ">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link navigation-font" href="{{ route('balance.index') }}">Balance</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link navigation-font" href=" {{ url('/Recargar') }} ">Recargar</a>
-      </li>
+      @auth
+        <li class="nav-item active">
+          <a class="nav-link navigation-font" href=" {{ route('home') }} ">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link navigation-font" href="{{ route('balance.index') }}">Balance</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link navigation-font" href=" {{ url('/Recargar') }} ">Recargar</a>
+        </li>
+      @endauth
     </ul>
 
     <!-- Right Side Of Navbar -->
     <ul class="navbar-nav ml-auto">
-      <div class="credits-font">
-        <div>
-          <img class="ico-exchange" src="{{ asset('storage/logo/MxBg.jpg')}}" alt="">
+      @auth
+        <div class="credits-font">
+          <div>
+            <img class="ico-exchange" src="{{ asset('storage/logo/MxBg.jpg')}}" alt="">
+          </div>
+          <div class="text-exchange">
+            <span style="float: right;">{{ Auth::user()->total_credits }} $</span>
+          </div>
         </div>
-        <div class="text-exchange">
-          <span style="float: right;">{{ Auth::user()->total_credits }} $</span>
-        </div>
-      </div>
+      @endauth
       <!-- Authentication Links -->
       @guest
-      <li class="nav-item">
-        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-      </li>
-      @if (Route::has('register'))
-      <li class="nav-item">
-        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-      </li>
-      @endif
-      @else
-      <li class="nav-item dropdown">
-        <a id="navbarDropdown" class="nav-link dropdown-toggle navigation-font" href="#" role="button"
-          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-          {{ Auth::user()->name }} <span class="caret"></span>
-        </a>
+        <li class="nav-item">
+          <a class="nav-link navigation-font" href="{{ route('login') }}">{{ __('Login') }}</a>
+        </li>
+        @if (Route::has('register'))
+          <li class="nav-item">
+            <a class="nav-link navigation-font" href="{{ route('register') }}">{{ __('Register') }}</a>
+          </li>
+        @endif
+        @else
+          <li class="nav-item dropdown">
+            <a id="navbarDropdown" class="nav-link dropdown-toggle navigation-font" href="#" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+              {{ Auth::user()->name }} <span class="caret"></span>
+            </a>
 
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                       document.getElementById('logout-form').submit();">
-            {{ __('Logout') }}
-          </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
+                {{ __('Logout') }}
+              </a>
 
-          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-            @csrf
-          </form>
-        </div>
-      </li>
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+              </form>
+            </div>
+          </li>
       @endguest
     </ul>
   </div>
